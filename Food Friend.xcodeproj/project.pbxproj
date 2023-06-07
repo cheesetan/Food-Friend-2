@@ -53,10 +53,9 @@
 		6A2FE5DC2A30AFF10051B194 /* Food Friend */ = {
 			isa = PBXGroup;
 			children = (
-				6A2FE5DD2A30AFF10051B194 /* Food_FriendApp.swift */,
-				6A2FE5DF2A30AFF10051B194 /* ContentView.swift */,
-				6A2FE5E12A30AFF30051B194 /* Assets.xcassets */,
-				6A2FE5E62A30AFF30051B194 /* Item.swift */,
+				6A2FE6112A30B1CA0051B194 /* Application */,
+				6A2FE6102A30B1C10051B194 /* Models */,
+				6A2FE6122A30B2B70051B194 /* UI */,
 				6A2FE5E32A30AFF30051B194 /* Preview Content */,
 			);
 			path = "Food Friend";
@@ -68,6 +67,47 @@
 				6A2FE5E42A30AFF30051B194 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6A2FE6102A30B1C10051B194 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6A2FE5E62A30AFF30051B194 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6A2FE6112A30B1CA0051B194 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				6A2FE5DD2A30AFF10051B194 /* Food_FriendApp.swift */,
+				6A2FE5DF2A30AFF10051B194 /* ContentView.swift */,
+				6A2FE5E12A30AFF30051B194 /* Assets.xcassets */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		6A2FE6122A30B2B70051B194 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6A2FE6142A30B2FE0051B194 /* Components */,
+				6A2FE6132A30B2F60051B194 /* Main */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		6A2FE6132A30B2F60051B194 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6A2FE6142A30B2FE0051B194 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,11 +319,13 @@
 				DEVELOPMENT_TEAM = DBBLGF84W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Food Friend";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,11 +350,13 @@
 				DEVELOPMENT_TEAM = DBBLGF84W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Food Friend";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
