@@ -36,9 +36,9 @@ struct FoodsView: View {
                             .fontWeight(.bold)
                             .foregroundStyle(.primary.opacity(0.8))
                     }
+                    .listRowBackground(Color.offBWForeground)
                 }
                 .scrollContentBackground(.hidden)
-                .listRowBackground(Color.offBWForeground)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
                         Text("Foods")

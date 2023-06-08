@@ -1,14 +1,13 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  Food Friend
 //
-//  Created by Tristan on 08/06/2023.
+//  Created by Tristan on 09/06/2023.
 //
 
 import SwiftUI
 
-struct SignInView: View {
-    
+struct SignUpView: View {
     @Binding var showingSignInView: Bool
     
     @State var loadingIndicator = false
@@ -16,8 +15,10 @@ struct SignInView: View {
     
     @State private var email = String()
     @State private var password = String()
+    @State private var confirmPassword = String()
     
     @State private var showPassword = false
+    @State private var showConfirmPassword = false
     @FocusState var passwordFocus: Bool
     
     @ObservedObject private var AuthVM = AuthenticationViewModel()
@@ -28,7 +29,7 @@ struct SignInView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 
-                Text("Login")
+                Text("Create Account")
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .padding(.bottom, 5)
@@ -39,14 +40,10 @@ struct SignInView: View {
                 
                 passwordField
                 
-                signInButton
-                                
-                alternateLogInOptionsDivider
+                confirmPasswordField
                 
-                alternateLogInOptionButton(label: "Login with QR Code", SFSymbolString: "qrcode") {
-                    print("amongus")
-                }
-                                
+                signUpButton
+                
                 Spacer()
                 
                 switchToSignUpViewButton
@@ -75,11 +72,42 @@ struct SignInView: View {
         }
     }
     
+    var confirmPasswordField: some View {
+        VStack {
+            if showPassword {
+                HStack {
+                    TextField("Confirm Password", text: $confirmPassword)
+                        .textFieldStyle(AuthenticatonTextFieldStyle(SFSymbolString: "rectangle.and.pencil.and.ellipsis"))
+                    showConfirmPasswordButton
+                }
+            } else {
+                HStack {
+                    SecureField("Confirm Password", text: $confirmPassword)
+                        .textFieldStyle(AuthenticatonTextFieldStyle(SFSymbolString: "rectangle.and.pencil.and.ellipsis"))
+                    showConfirmPasswordButton
+                }
+            }
+        }
+    }
+    
     var showPasswordButton: some View {
         VStack {
             Button {
                 withAnimation {
                     showPassword.toggle()
+                }
+            } label: {
+                Image(systemName: showPassword ? "eye" : "eye.slash")
+            }
+            .foregroundStyle(.gray)
+        }
+    }
+    
+    var showConfirmPasswordButton: some View {
+        VStack {
+            Button {
+                withAnimation {
+                    showConfirmPassword.toggle()
                 }
             } label: {
                 Image(systemName: showPassword ? "eye" : "eye.slash")
@@ -95,7 +123,7 @@ struct SignInView: View {
             }
         } label: {
             Spacer()
-            Text("New to Food Friend? \(Text("Create an account!").foregroundStyle(.blue).fontWeight(.bold))")
+            Text("Already have an account? \(Text("Login!").foregroundStyle(.blue).fontWeight(.bold))")
                 .font(.headline)
                 .fontWeight(.bold)
             Spacer()
@@ -103,46 +131,19 @@ struct SignInView: View {
         .buttonStyle(.plain)
     }
     
-    var signInButton: some View {
+    var signUpButton: some View {
         Button {
             loadingIndicator = true
             failedSignIn = false
-            AuthVM.signIn(email: email, password: password)
+            AuthVM.createNewAccount()
         } label: {
-            Text("Login")
+            Text("Create account and Login")
         }
         .buttonStyle(AuthenticationButtonStyle(SFSymbolString: "arrow.right", loadingIndicator: $loadingIndicator, failedSignIn: $failedSignIn))
         .buttonStyle(.plain)
     }
-    
-    var alternateLogInOptionsDivider: some View {
-        HStack {
-            VStack {
-                Divider()
-            }
-            Text("OR")
-                .font(Font.system(.headline).uppercaseSmallCaps())
-                .fontWeight(.bold)
-                .foregroundStyle(.secondary)
-            VStack {
-                Divider()
-            }
-        }
-        .padding(.vertical)
-    }
-    
-    func alternateLogInOptionButton(label: String, SFSymbolString: String, action: @escaping () -> Void) -> some View {
-        VStack {
-            Button {
-                action()
-            } label: {
-                Text("\(label)")
-            }
-            .buttonStyle(AlternateLogInOptionButtonButtonStyle(SFSymbolString: SFSymbolString))
-        }
-    }
 }
 
 #Preview {
-//    SignInView()
+//    SignUpView()
 }
