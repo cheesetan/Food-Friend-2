@@ -28,7 +28,8 @@ struct SettingsView: View {
         Button(role: .destructive) {
             AuthVM.signOut()
         } label: {
-            Text("Sign Out")
+            Label("Sign Out", systemImage: "rectangle.portrait.and.arrow.right")
+                .foregroundStyle(.red)
         }
     }
 }

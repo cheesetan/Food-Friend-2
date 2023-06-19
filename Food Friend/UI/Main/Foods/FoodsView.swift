@@ -10,6 +10,7 @@ import SwiftData
 
 struct FoodsView: View {
     
+    @State private var showingAddFoodsView = false
     @ObservedObject var FoodsVM = FoodsViewModel()
     
     var body: some View {
@@ -47,16 +48,22 @@ struct FoodsView: View {
                     }
                     
                     ToolbarItem(placement: .topBarTrailing) {
-                        EditButton()
+                        Button {
+                            showingAddFoodsView = true
+                        } label: {
+                            Image(systemName: "plus")
+                        }
                     }
                     
-                    ToolbarItem {
-                        Button(action: addItem) {
-                            Label("Add Item", systemImage: "plus")
-                        }
+                    ToolbarItem(placement: .topBarTrailing) {
+                        EditButton()
                     }
                 }
             }
+        }
+        .sheet(isPresented: $showingAddFoodsView) {
+            AddFoodsView()
+                .presentationDetents([.height(300)])
         }
         .onAppear {
             FoodsVM.fetchFoods()
@@ -78,14 +85,6 @@ struct FoodsView: View {
                     .fontWeight(.bold)
             }
             .padding(.vertical, 5)
-        }
-    }
-    
-    // MARK: - Functions
-    private func addItem() {
-        withAnimation {
-            let newItem = Food(title: "Corn", description: "", expiryDate: Date(), base64Image: "balls")
-            FoodsVM.addFood(food: newItem)
         }
     }
     

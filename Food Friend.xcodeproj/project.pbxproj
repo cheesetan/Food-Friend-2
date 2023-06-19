@@ -42,6 +42,7 @@
 		6AE80B3C2A321F650041900D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE80B3B2A321F650041900D /* Styles.swift */; };
 		6AE80B3E2A325C150041900D /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE80B3D2A325C150041900D /* AuthenticationView.swift */; };
 		6AE80B402A325C550041900D /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE80B3F2A325C550041900D /* SignUpView.swift */; };
+		6AF976E82A3FE0C300F550B2 /* AddFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF976E72A3FE0C300F550B2 /* AddFoodsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		6AE80B3B2A321F650041900D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		6AE80B3D2A325C150041900D /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		6AE80B3F2A325C550041900D /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		6AF976E72A3FE0C300F550B2 /* AddFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				6A2FE63D2A30B9DD0051B194 /* FoodsView.swift */,
+				6AF976E72A3FE0C300F550B2 /* AddFoodsView.swift */,
 			);
 			path = Foods;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A9CAEBC2A31C5F700B2D542 /* SignInView.swift in Sources */,
+				6AF976E82A3FE0C300F550B2 /* AddFoodsView.swift in Sources */,
 				6A13707C2A30BC810055DB34 /* SettingsView.swift in Sources */,
 				6A2FE5E02A30AFF10051B194 /* ContentView.swift in Sources */,
 				6AE80B3C2A321F650041900D /* Styles.swift in Sources */,

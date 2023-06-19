@@ -77,6 +77,19 @@ struct AlternateLogInOptionButtonButtonStyle: ButtonStyle {
     }
 }
 
+struct DefaultButtonButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.headline)
+            .fontWeight(.heavy)
+            .padding()
+            .foregroundStyle(.primary)
+            .frame(maxWidth: .infinity)
+            .background(.blue)
+            .clipShape(RoundedRectangle(cornerRadius: 16))
+    }
+}
+
 // MARK: - TextFieldStyles
 struct AuthenticatonTextFieldStyle: TextFieldStyle {
     
@@ -105,5 +118,17 @@ struct AuthenticatonTextFieldStyle: TextFieldStyle {
                 focusedState = focused
             }
         }
+    }
+}
+
+struct DefaultTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        VStack(alignment: .leading) {
+            configuration
+                .padding()
+                .background(.ultraThickMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
+        .padding(.vertical, 5)
     }
 }
